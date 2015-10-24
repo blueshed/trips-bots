@@ -1,0 +1,18 @@
+<div class="WeatherPanel">
+	<ul>
+		<li v-for="weather in weather_list">
+			<a v-on:click="open(weather)">
+				<span>{{ weather.val.location }}</span>
+			</a>
+		</li>
+	</ul>
+	<div v-if="weather_item">
+		<h1>
+			<span v-text="weather_item.title"></span>
+			<span class="weather-icon {{weather_item.icon_class}}"></span>
+			<br/>
+			<small v-text="weather_item.icon"></small>
+			<small v-text="weather_item.temperature"></small>
+		</h1>
+	</div>
+</div>

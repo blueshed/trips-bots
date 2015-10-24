@@ -1,0 +1,26 @@
+{
+  "name": "trips-bots",
+  "version": "0.0.1",
+  "description": "Fun filling firebase trips",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "firebase": "2.3.1",
+    "request": "2.65.0"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blueshed/trips-bots"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "firebase"
+  ],
+  "license": "MIT"
+}
