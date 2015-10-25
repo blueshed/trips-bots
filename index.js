@@ -5,7 +5,7 @@
     It also runs the weather bot.
  */
 
-var dotenv = require('dotenv');
+
 var http = require('http');
 var connect = require('connect');
 var serveStatic = require('serve-static');
@@ -15,8 +15,7 @@ var WeatherBot = require('./weather-bot/main');
 /**
     load environment variables if not in git hub
  */
-dotenv.config({silent: true});
-dotenv.load();
+require('dotenv').config({silent: true});
 
 /**
     set up resources

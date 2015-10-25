@@ -11,6 +11,7 @@
     "dotenv": "^1.2.0",
     "firebase": "2.3.1",
     "request": "2.65.0",
+    "sendgrid": "^1.9.2",
     "serve-static": "^1.10.0"
   },
   "engines": {
