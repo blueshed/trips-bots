@@ -56,10 +56,10 @@ class WeatherWork{
 	    var weather = this.weather_store.add({
 	    	location: location,
 	    	icon: result.current_observation.icon,
-	    	temperature: result.current_observation.temperature_string
+	    	temperature: result.current_observation.temperature_string,
+	    	raw: result
 	    });
 	    this.work_base.child(work_id).update({
-	    	raw: result,
 	    	weather: weather.id
 	    });
 	}
