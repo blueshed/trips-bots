@@ -1,14 +1,21 @@
-var weather_store = require('./weather_store');
-var work_items = require('./work_items');
+"use strict";
+var WeatherStore = require('./weather_store');
+var WeatherWork = require('./weather_work');
 
 
-var FBPath = "https://popping-inferno-367.firebaseio.com/tests/";
-var WEATHER_PATH = FBPath + "weather";
-var WORK_PATH = FBPath + "work";
+class WeatherBot{
+	constructor(fb_path, api_key){
+		this.fb_path = fb_path;
+		this.weather_path = fb_path + "weather";
+		this.work_path = fb_path + "work";
 
-var weather_items = weather_store.init(WEATHER_PATH);
-	
-work_items.init(WORK_PATH, weather_items);
+		this.weather_store = new WeatherStore(this.weather_path);
+		this.work_items = new WeatherWork(this.work_path, api_key, this.weather_store);
+	}
 
-exports.items = weather_items.items;
+	items(){
+		return this.weather_store.weather_items;
+	}
+}
 
+module.exports = WeatherBot;

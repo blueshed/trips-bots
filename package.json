@@ -22,5 +22,8 @@
     "heroku",
     "firebase"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^5.8.29"
+  }
 }
