@@ -1,4 +1,10 @@
 "use strict";
+/**
+	This creates a weather store and a weather worker
+
+	It exposes items for admin reporting.
+ */
+
 var WeatherStore = require('./weather_store');
 var WeatherWork = require('./weather_work');
 
