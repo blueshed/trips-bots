@@ -3,3 +3,6 @@ node_modules
 dist
 firebase-debug.log
 node-js-getting-started/
+.env
+Dockerfile
+docker-compose.yml

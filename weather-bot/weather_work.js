@@ -1,4 +1,10 @@
 "use strict";
+/**
+	This creates a weather worker that listens to
+	firebase and requests a weather report from
+	wunderground and adds it to a weather store.
+	in weather_items.
+ */
 var Firebase = require('firebase');
 var request = require('request');
 
@@ -23,17 +29,25 @@ class WeatherWork{
 		var value = snapshot.val();
 		if(!value.weather){
 			this.get_weather(value.lat, 
-							value.lng,
+							 value.lng,
 							(error, response, body) => {
-							    console.log(response.statusCode) // 200
-							    var result = JSON.parse(body);
-							    this.update_weather(key, result);
+							    if(response.statusCode == 200){
+								    var result = JSON.parse(body);
+								    if(result.location){
+								    	this.update_weather(key, result);
+								    } else {
+								    	console.log("result-error", result);
+								    }
+							    } else {
+									console.log("request-error",response.statusCode,error);
+							    }
 							});
 		}
 	}
 
 	get_weather(lat,lng, callback){
-		var url = this.geo_url.replace("{lat}",lat).replace("{lng}",lng);
+		var url = this.geo_url.replace("{lat}",lat.toFixed(2)).replace("{lng}",lng.toFixed(2));
+		console.log(url);
 		request(url,callback);
 	}
 

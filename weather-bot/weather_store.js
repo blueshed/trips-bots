@@ -1,11 +1,20 @@
 "use strict";
+/**
+	This creates a weather store that listens to
+	firebase and syncs a list of weather reports
+	in weather_items.
+
+	It exposes add to that new items can be sent to
+	or updated in firebase.
+ */
 var Firebase = require('firebase');
 
-/**
-	load up the weather
- */
+
 class WeatherStore{
 	constructor(fb_path){
+		if(!fb_path){
+			throw "No firebase path specified."
+		}
 		this.fb_path = fb_path;
 		this.weather_items = [];
 		this.weather_base = new Firebase(fb_path);
@@ -34,6 +43,9 @@ class WeatherStore{
 		});
 	}
 
+	/**
+		send or update a weather report to firebase.
+	 */
 	add(weather){
 	    var item = this.weather_items.find(function(item){
 	    	return item.value.location == weather.location;
