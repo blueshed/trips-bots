@@ -5,6 +5,12 @@ var WeatherWork = require('./weather_work');
 
 class WeatherBot{
 	constructor(fb_path, api_key){
+		if(!fb_path){
+			throw "No firebase path specified!";
+		}
+		if(!api_key){
+			throw "No wunderground api key specified";
+		}
 		this.fb_path = fb_path;
 		this.weather_path = fb_path + "weather";
 		this.work_path = fb_path + "work";
