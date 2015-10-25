@@ -16,7 +16,6 @@ var icon_map = {
 	"partlysunny":   	"icon-sunny",
 	"sleet": 			"icon-cloud icon-snowy",
 	"rain":  			"icon-cloud icon-rainy",
-	"sleet": 			"icon-sleet",
 	"snow":  			"icon-cloud icon-snowy",
 	"sunny": 			"icon-sun",
 	"tstorms": 			"icon-thunder"
