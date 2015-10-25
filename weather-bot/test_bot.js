@@ -1,4 +1,6 @@
+"use strict";
 var Firebase = require('firebase');
+
 var FBPath = "https://popping-inferno-367.firebaseio.com/tests/";
 
 var work_base = new Firebase(FBPath + "work");
