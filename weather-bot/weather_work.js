@@ -22,16 +22,13 @@ class WeatherWork{
 		var key = snapshot.key();
 		var value = snapshot.val();
 		if(!value.weather){
-			weather_bot(value.lat, 
-						value.lng,
-						(error, response, body) => {
-						    console.log(response.statusCode) // 200
-						    var result = JSON.parse(body);
-						    work_base.child(key).update({
-						    	raw: result
-						    });
-						    this.update_weather(key, result);
-						 });
+			this.get_weather(value.lat, 
+							value.lng,
+							(error, response, body) => {
+							    console.log(response.statusCode) // 200
+							    var result = JSON.parse(body);
+							    this.update_weather(key, result);
+							});
 		}
 	}
 
@@ -48,6 +45,7 @@ class WeatherWork{
 	    	temperature: result.current_observation.temperature_string
 	    });
 	    this.work_base.child(work_id).update({
+	    	raw: result,
 	    	weather: weather.id
 	    });
 	}
