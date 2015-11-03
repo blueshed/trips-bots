@@ -1,0 +1,7 @@
+.PhotoPanel
+.photo-item
+img{
+    width: 64px;
+    float: left;
+    margin-right: 6px;
+}

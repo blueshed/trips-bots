@@ -89,7 +89,7 @@ app.use('/upload', function(req, resp, next) {
 	});
 });
 
-app.use(serveStatic('weather-ui/dist', {'index': ['index.html', 'index.htm']}));
+app.use(serveStatic('weather-ui', {'index': ['index.html', 'index.htm']}));
 
 
 /**

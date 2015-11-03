@@ -1,3 +1,15 @@
-<form action="/upload"
+<div class="PhotoPanel">
+    <form action="/upload"
       class="dropzone"
       id="my-awesome-dropzone"></form>
+  	<ul>
+  		<li v-for="photo in sorted_photos">
+  			<div class="photo-item">
+                <img :src="photo.val.path" />
+  				<span>{{ photo.val.date }} - {{ photo.val.lat }}:{{ photo.val.lng }}</span><br/>
+                <span>{{ photo.uid }}</span><br/>
+                <span>{{ photo.val.path }}</span>
+  			</div>
+  		</li>
+  	</ul>
+</div>

@@ -5,7 +5,8 @@ var uuid = require('node-uuid');
 var mime = require('mime');
 var AWS = require('aws-sdk');
 var fs = require("fs");
-var Firebase = require('firebase')
+var Firebase = require('firebase');
+var moment = require('moment');
 
 
 class S3FBFile{
@@ -78,6 +79,7 @@ class S3FBFile{
         return new Promise((resolve, reject) => {
             var data = {
                 path: this.get_url(),
+                date: this.date(),
                 lat: this.lat(),
                 lng: this.lng()
             };
@@ -129,6 +131,11 @@ class S3FBFile{
     	}
 
     	return decimal;
+    }
+    date(){
+        if(this.meta_data && this.meta_data.exif){
+            return moment(this.meta_data.exif.CreateDate,"YYYY:MM:DD HH:mm:ss").unix();
+        }
     }
 }
 

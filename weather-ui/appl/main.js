@@ -12,6 +12,7 @@ Vue.config.debug = true
 var FBPath = "https://popping-inferno-367.firebaseio.com/tests/";
 var weather_base = FBPath + "weather";
 var work_base = FBPath + "work";
+var photo_base = FBPath + "photos";
 
 
 var appl = window.appl = new Vue({
@@ -20,7 +21,8 @@ var appl = window.appl = new Vue({
         loading: true,
         welcome_msg: 'foobar',
         weather_base: weather_base,
-        work_base: work_base
+        work_base: work_base,
+        photo_base: photo_base
     },
     ready: function() {
         this.loading = false;
