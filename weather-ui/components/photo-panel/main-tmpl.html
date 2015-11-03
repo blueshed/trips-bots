@@ -6,10 +6,12 @@
   		<li v-for="photo in sorted_photos">
   			<div class="photo-item">
                 <img :src="photo.val.path" />
-  				<span>{{ photo.val.date }} - {{ photo.val.lat }}:{{ photo.val.lng }}</span><br/>
+  				<strong>{{ photo.date.format('llll') }}</strong><br/>
+  				<span>{{ photo.val.lat }} : {{ photo.val.lng }}</span>
                 <span>{{ photo.uid }}</span><br/>
                 <span>{{ photo.val.path }}</span>
   			</div>
+            <div class="u-cf"/>
   		</li>
   	</ul>
 </div>

@@ -4,6 +4,7 @@ import tmpl from './main-tmpl.html!text';
 import firebase_mixin from 'mixins/firebase-mixin';
 import Vue from 'vue';
 import Dropzone from 'dropzone';
+import moment from 'moment';
 
 
 Vue.component('photo-panel', {
@@ -34,9 +35,11 @@ Vue.component('photo-panel', {
         var fb = new Firebase(this.base);
   		fb.on('value', value=>{});
   		fb.on("child_added", value => {
-  			var photo = this.get_photo(value.key());
+            var key = value.key();
+  			var photo = this.get_photo(key);
   			if(!photo){
-				  this.photos.push({uid:value.key(),val: value.val()});
+                var val = value.val();
+				this.photos.push({uid:key,val: val, date: moment.unix(val.date)});
   			}
   		});
         this.$nextTick( () => {

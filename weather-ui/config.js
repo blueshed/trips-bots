@@ -21,6 +21,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.19",
     "dropzone": "npm:dropzone@4.2.0",
     "firebase": "github:firebase/firebase-bower@2.3.1",
+    "moment": "npm:moment@2.10.6",
     "skeleton-css": "npm:skeleton-css@2.0.4",
     "text": "github:systemjs/plugin-text@0.0.2",
     "vue": "npm:vue@1.0.0-rc.2",
@@ -137,6 +138,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "source-map": "npm:source-map@0.1.31"
+    },
+    "npm:moment@2.10.6": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"
