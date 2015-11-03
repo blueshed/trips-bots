@@ -8,9 +8,9 @@ var sendgrid  = require('sendgrid')(
 
 sendgrid.send({
   to:       'oskar@spddo.co.uk',
-  cc: 		'pete@blueshed.co.uk', 
-  from:     'pete@blueshed.co.uk',
-  subject:  'Hello World',
+  cc: 		['pete@blueshed.co.uk','dash@spddo.co.uk'], 
+  from:     'spddo@me.com',
+  subject:  'Another Hello World',
   text:     'My first email through SendGrid using node.js.'
 }, function(err, json) {
   if (err) { return console.error(err); }

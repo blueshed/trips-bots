@@ -11,6 +11,7 @@
   "jspm": {
     "dependencies": {
       "css": "github:systemjs/plugin-css@^0.1.19",
+      "dropzone": "npm:dropzone@^4.2.0",
       "firebase": "github:firebase/firebase-bower@^2.3.1",
       "skeleton-css": "npm:skeleton-css@^2.0.4",
       "text": "github:systemjs/plugin-text@^0.0.2",

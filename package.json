@@ -7,9 +7,15 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.2.14",
     "connect": "^3.4.0",
     "dotenv": "^1.2.0",
     "firebase": "2.3.1",
+    "firebase-token-generator": "^2.0.0",
+    "mime": "^1.3.4",
+    "multiparty": "^4.1.2",
+    "node-uuid": "^1.4.3",
+    "path-exif-mapper": "^0.2.0",
     "request": "2.65.0",
     "sendgrid": "^1.9.2",
     "serve-static": "^1.10.0"

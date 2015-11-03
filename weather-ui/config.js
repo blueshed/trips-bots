@@ -19,6 +19,7 @@ System.config({
     "clean-css": "npm:clean-css@3.4.6",
     "core-js": "npm:core-js@1.2.3",
     "css": "github:systemjs/plugin-css@0.1.19",
+    "dropzone": "npm:dropzone@4.2.0",
     "firebase": "github:firebase/firebase-bower@2.3.1",
     "skeleton-css": "npm:skeleton-css@2.0.4",
     "text": "github:systemjs/plugin-text@0.0.2",
@@ -107,6 +108,9 @@ System.config({
     },
     "npm:core-util-is@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0"
+    },
+    "npm:dropzone@4.2.0": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:envify@3.4.0": {
       "jstransform": "npm:jstransform@10.1.0",

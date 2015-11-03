@@ -5,6 +5,7 @@ import Vue from 'vue';
 
 import 'components/weather-panel/main';
 import 'components/work-panel/main';
+import 'components/photo-panel/main';
 
 Vue.config.debug = true
 
